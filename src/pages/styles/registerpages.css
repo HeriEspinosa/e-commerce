@@ -1,0 +1,37 @@
+.register {
+    background-color: brown;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    width: 50%;
+    height: 40%;
+    margin: 0 auto;
+    padding: 0.5em;
+    border: 2px solid #eee;
+}
+
+.register__info {
+    height: 30%;
+    background-color: #0a609a;
+    padding: 1em;
+}
+
+.register__info h4 {
+    display: inline-block;
+    padding: 0.2em;
+    color: #d7d6d6;
+}
+
+.register__form {
+    
+    align-items: center;
+}
