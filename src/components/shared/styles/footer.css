@@ -1,0 +1,56 @@
+.footer {
+    width: 100vw;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(93,56,145,1) 56%, rgba(255,255,255,1) 100%);
+    margin-top: 3em;
+}
+.footer__info {
+    display: flex;
+    gap: 1em;
+    text-align: center;
+    justify-content: space-around;
+    padding: 1em;
+    line-height: 1.2em;
+    color: #adacacee;
+}
+
+section > h3 {
+    margin-bottom: 0.5em;
+}
+
+.info__gratitude {
+    flex-direction: column;
+    gap: 0.1em;
+}
+.info__gratitude  span{
+    font-size: 0.9rem;
+    color: whitesmoke;
+}
+
+.info__redes_social {
+    display: flex;
+    gap: 1.2em;
+}
+.info__redes_social p a{
+    color: whitesmoke;
+    font-size: 2rem;
+}
+.info__code a {  
+    text-decoration: none;
+}
+.info__code a p {
+    font-weight: 400;
+    color:azure;
+}
+.info__code a p span {
+    font-size: 1rem;
+    color: lawngreen;
+    cursor: pointer;
+}
+
+.footer__bottom p {
+    padding: 1.2em;
+    text-align: center;
+    font-size: 0.7rem;
+    font-weight: 600;
+}

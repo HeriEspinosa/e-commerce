@@ -1,0 +1,16 @@
+
+.purchase {
+    background-color: #eee;
+}
+
+.purchase__header {
+    width: 200px;
+    height: 200px;
+    
+}
+
+.purchase__header img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

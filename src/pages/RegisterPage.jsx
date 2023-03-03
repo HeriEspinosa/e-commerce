@@ -2,7 +2,7 @@ import axios from 'axios';
 import { useForm } from 'react-hook-form';
 import defaultValue from '../utils/defaultValues';
 import config from '../utils/getConfig';
-import './styles/registerpages.css'
+import './styles/registerpage.css'
 
 const RegisterPage = () => {
     const { register, handleSubmit, reset } = useForm()
@@ -44,6 +44,7 @@ const RegisterPage = () => {
                         <input {...register('phone')} type="phone" id='phone' />
                     </div>
                     <button>Register</button>
+                    <button>Login</button>
                 </form>
             </div>
 

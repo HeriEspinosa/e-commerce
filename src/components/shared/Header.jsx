@@ -5,7 +5,7 @@ import './styles/header.css'
 const Header = () => {
     return (
         <header className='navbar'>
-            <h1 className='navbar__title letter_Neon'>
+            <h1 className='navbar__title letter_Neon flex'>
                 <Link to='/'>e-commerce</Link>
             </h1>
             <nav className='navbar__menu'>

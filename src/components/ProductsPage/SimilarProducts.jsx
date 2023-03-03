@@ -16,8 +16,6 @@ const SimilarProducts = ({ category, productId }) => {
 
     }, [category, products])
 
-    console.log(filterProducts);
-
     return (
         <div>
             <h2>Discover similar products</h2>

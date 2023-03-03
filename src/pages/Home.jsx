@@ -2,13 +2,18 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CardProduct from '../components/Home/CardProduct'
-import { getProductsByName } from '../store/slices/products.slice'
+import ErrorProduct from '../components/Home/ErrorProduct'
+import { getAllProductsThunk, getProductsByName } from '../store/slices/products.slice'
 import './styles/home.css'
 
 const Home = () => {
 
     const { products } = useSelector(state => state)
     const [categories, setCategories] = useState()
+    const [fromTo, setFromTo] = useState({
+        from: 0,
+        to: Infinity
+    })
 
     const dispatch = useDispatch()
 
@@ -30,40 +35,81 @@ const Home = () => {
         dispatch(getProductsByName(id, true))
     }
 
+    const handleSubmitPrice = e => {
+        e.preventDefault()
+        const from = Number(e.target.from.value.trim())
+        const to = Number(e.target.to.value.trim())
+
+        if (from && to) {
+            setFromTo({ from, to })
+        } else if (from && !to) {
+            setFromTo({ from, to: Infinity })
+        } else if (!from && to) {
+            setFromTo({ from: 0, to })
+        } else {
+            setFromTo({ from: 0, to: Infinity })
+        }
+    }
+
+    const filterProducts = product => +product.price >= fromTo.from && +product.price <= fromTo.to
+
     return (
         <div className='home'>
-            <form autoComplete="off" onSubmit={handleSubmit}>
-                <input type="text" id='search' />
-                <button><i className='bx bx-search-alt-2'></i></button>
-            </form>
+            <article className='home__filter'>
+                <section className='filter__price'>
+                    <header className='filter__price-header' >
+                        <h4>Price</h4>
+                        <i className='bx bx-chevron-down'></i>
+                    </header>
 
-            <article>
-                <header>
-                    <h3>Category</h3>
-                    <i className='bx bx-chevron-down'></i>
-                    <ul>
+                    <form className='filter__price-form' action="" onSubmit={handleSubmitPrice}>
+                        <div className='price__from'>
+                            <label htmlFor="from">From</label>
+                            <input type="number" id='from' placeholder='$Min' />
+                        </div>
+                        <div className='price__to'>
+                            <label htmlFor="to">To</label>
+                            <input type="number" id='to' placeholder='$Max' />
+                        </div>
+                        <button className='price__btn letter_Mynerve'>Filter Price</button>
+                    </form>
+                </section>
+
+                <section className='filter__category'>
+                    <header className='filter__category-header'>
+                        <h4>Category</h4>
+                        <i className='bx bx-chevron-down'></i>
+                    </header>
+                    <ul className='filter__category-list'>
+                        <li onClick={() => dispatch(getAllProductsThunk())}>All Products</li>
                         {
                             categories?.map(category => (
                                 <li key={category.id} onClick={() => handleClickCategory(category.id)}>{category.name}</li>
                             ))
                         }
                     </ul>
-
-                </header>
-
+                </section>
             </article>
-            <div className='home_cardproduct'>
-                {
-                    products?.length === 0 ?
-                        <h1>❌ This product does'n exist? ❌</h1>
-                        :
-                        products?.map(product => (
-                            <CardProduct
-                                key={product.id}
-                                product={product}
-                            />
-                        ))
-                }
+
+            <div className='home__product'>
+                <form className='home__search flex' autoComplete="off" onSubmit={handleSubmit}>
+                    <input type="text" id='search' placeholder='What are you looking for?' />
+                    <button><i className='bx bx-search-alt-2'></i></button>
+                </form>
+                <div className='home__product-card flex'>
+
+                    {
+                        products?.length === 0 ?
+                            <ErrorProduct />
+                            :
+                            products?.filter(filterProducts).map(product => (
+                                <CardProduct
+                                    key={product.id}
+                                    product={product}
+                                />
+                            ))
+                    }
+                </div>
             </div>
         </div>
     )

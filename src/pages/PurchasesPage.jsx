@@ -1,10 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import PurchaseCard from '../components/PurchasesPage/PurchaseCard'
 import config from '../utils/getConfig'
+import './styles/purchasespage.css'
 
 const PurchasesPage = () => {
 
-    const [purrchases, setPurrchases] = useState()
+    const [purchases, setPurrchases] = useState()
 
     useEffect(() => {
         const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/purchases'
@@ -14,17 +16,17 @@ const PurchasesPage = () => {
     }, [])
 
     return (
-        <div>
-            <article>
+        <div className='purchasesPage'>
+            <div className='purchasesPage__item'>
                 {
-                    purrchases?.map(purchase => (
-                        <PurchasesPage
+                    purchases?.map(purchase => (
+                        <PurchaseCard
                             key={purchase.id}
                             purchase={purchase}
                         />
                     ))
                 }
-            </article>
+            </div>
         </div>
 
     )

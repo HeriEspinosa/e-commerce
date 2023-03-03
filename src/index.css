@@ -5,9 +5,19 @@
   box-sizing: border-box;
 }
 
+.flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .letter_Cabin {font-family: 'Cabin', sans-serif;}
 .letter_Mynerve{font-family: 'Mynerve', cursive;}
 .letter_Neon{font-family: 'Tilt Neon', cursive;}
+
+body {
+  font-family: 'Cabin', sans-serif;
+}
 
 button {
   border: none;
