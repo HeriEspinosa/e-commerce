@@ -87,7 +87,7 @@ font-weight: bold;
 .filter__category-list{
     font-size: 0.85rem;
     line-height: 3em;
-    text-shadow: -1px 1px 1px #b5b5b5;;    
+    text-shadow: -1px 1px 1px #b5b5b5;    
 }
 .filter__category-list li{
     transition: transform 100ms ease;
@@ -105,9 +105,12 @@ font-weight: bold;
     margin: 2.5em auto;
 }
 .home__search input {
+    color: #5D3891;
+    font-size: 0.9rem;
     width: 70%;
     height: 32px;
     border: 1px solid #d7d6d6;
+    padding-left: 0.6em;
 }
 .home__search input::placeholder{
     color: #d7d6d6;

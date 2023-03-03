@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import defaultValue from '../utils/defaultValues'
-import config from '../utils/getConfig'
+import './styles/loginpage.css'
 
 const Login = () => {
 
@@ -49,21 +49,23 @@ const Login = () => {
     }
     else {
         return (
-            <div>
-                <h3>Welcome</h3>
-                <form autoComplete="off" onSubmit={handleSubmit(submit)}>
-                    <h3>Login</h3>
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input {...register('email')} type="email" id='email' />
-                    </div>
-                    <div>
-                        <label htmlFor="password">password</label>
-                        <input {...register('password')} type="password" id="password" />
-                    </div>
-                    <button>Login</button>
-                </form>
-                <button onClick={handleClick}>Register</button>
+            <div className='loginPages'>
+                <div className='loginPages__container flex'>
+                    <h3 className='loginPages__welcome letter_Mynerve'>Today is a good day!</h3>
+                    <form className='loginPages__form flex letter_Neon' autoComplete="off" onSubmit={handleSubmit(submit)}>
+                        <h1 className='loginPages__form-user' ><i class='bx bx-user-plus'></i></h1>
+                        <div className='loginPages__form-email'>
+                            <label htmlFor="email">{'=>'} </label>
+                            <input {...register('email')} type="email" id='email' placeholder='email' />
+                        </div>
+                        <div className='loginPages__form-password'>
+                            <label htmlFor="password">{'=>'}  </label>
+                            <input {...register('password')} type="password" id="password" placeholder='password' />
+                        </div>
+                        <button className='loginPages__form-btn letter_Neon'>Login</button>
+                    </form>
+                    <button className='loginPages__register letter_Neon' onClick={handleClick}>Register</button>
+                </div>
             </div>
         )
     }

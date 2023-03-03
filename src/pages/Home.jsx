@@ -93,7 +93,7 @@ const Home = () => {
 
             <div className='home__product'>
                 <form className='home__search flex' autoComplete="off" onSubmit={handleSubmit}>
-                    <input type="text" id='search' placeholder='What are you looking for?' />
+                    <input className='letter_Neon' type="text" id='search' placeholder='What are you looking for?' />
                     <button><i className='bx bx-search-alt-2'></i></button>
                 </form>
                 <div className='home__product-card flex'>

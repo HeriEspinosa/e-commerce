@@ -27,7 +27,7 @@ const SliderImgs = ({ product }) => {
     }
 
     return (
-        <div>
+        <div className='carousel '>
             <div className='slider'>
                 <button onClick={handlePrevious} className='slider__btn slider__btn-left'><i className='bx bx-chevron-left'></i></button>
                 <div style={styleMovement} className='slider__movement'>
@@ -41,7 +41,7 @@ const SliderImgs = ({ product }) => {
                 </div>
                 <button onClick={handleNext} className='slider__btn slider__btn-right'><i className='bx bx-chevron-right'></i></button>
             </div>
-            <div style={styleMovement} className='carousel__footer'>
+            <div className='carousel__footer'>
                 {
                     product?.images.map((image, index) => (
                         <div
@@ -52,9 +52,6 @@ const SliderImgs = ({ product }) => {
                         </div>
                     ))
                 }
-            </div>
-            <div>
-
             </div>
         </div>
 

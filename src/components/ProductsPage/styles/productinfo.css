@@ -4,17 +4,30 @@
 }
 .productInfo__brand {
     margin-bottom: 0.2em;
-    font-weight: 400;
+    font-weight: bold;
+    color: #b5b4b4;
 }
 .productInfo__title {
     margin-bottom: 0.5em;
     font-weight: 600;
 }
 .productInfo__description {
+    font-size: 0.8rem;
     line-height: 1.4;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
 }
 
+.productInfo__footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5em;
+    margin-bottom: 1.6em;
+}
+.productInfo__footer section > h6 {
+    color: #b5b4b4;
+    padding-bottom: 0.3em;
+}
 .productInfo__footer-counter {
     display: flex;
     gap: 0.4em;
@@ -25,7 +38,7 @@
 .productInfo__footer-counter-number,
 .productInfo__footer-counter-minus,
 .productInfo__footer-counter-plus {
-    width: 15px;
+    width: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,10 +64,14 @@
     border-left: 1px solid #aaa;
 }
 .productInfo__footer-btn {
-    font-size: 1rem;
+    width: 100%;
+    font-size: 0.9rem;
     background-color: #5D3891;
     color: whitesmoke;
-    padding: 0.5em 1em;
-    border-radius: 0.4em;
+    padding: 0.5em 0.8em;
+    border-radius: 0.3em;
     cursor: pointer;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
 }

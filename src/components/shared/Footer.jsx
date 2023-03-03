@@ -7,13 +7,13 @@ const Footer = () => {
             <section className='footer__info'>
                 <section className="info__gratitude flex">
                     <h3 className="info__gratitude-title">Gratitude</h3>
-                    <span className="info__gratitude-academlo">Academlo</span>
-                    <span className="info__gratitude-teacher">Benjamin Flores</span>
-                    <span className="info__gratitude-genderation">NOV-Generacion 22</span>
+                    <span className="info__gratitude-academlo letter_Mynerve">Academlo</span>
+                    <span className="info__gratitude-teacher letter_Mynerve">Benjamin Flores</span>
+                    <span className="info__gratitude-genderation letter_Mynerve">NOV-Generacion 22</span>
                 </section>
                 <section className="info__code">
                     <h3 className="info__code-title">GitHub</h3>
-                    <a href="https://github.com/HeriEspinosa/repo_react_entregable3.git" target='blank'><p>Hecha un Vistazo a mi Codigo <span>Aqui</span></p></a>
+                    <a className="letter_Neon" href="https://github.com/HeriEspinosa/repo_react_entregable6.git" target='blank'><p>Hecha un Vistazo a mi Codigo <span>Aqui</span></p></a>
                 </section>
                 <section className="info__redes">
                     <h3 className="footer__information-title">Social</h3>

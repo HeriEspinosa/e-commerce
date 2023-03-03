@@ -1,25 +1,17 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getCartThunk } from '../../store/slices/cart.slice';
+import { setCounter } from '../../store/slices/counter.slice';
 import config from '../../utils/getConfig';
+import Counter from '../Home/Counter';
 import './styles/productinfo.css'
 
 const ProductInfo = ({ product }) => {
 
-    const [counter, setCounter] = useState(1)
+    const { counter } = useSelector(state => state)
 
     const dispatch = useDispatch()
-
-    const handleAdd = () => {
-        setCounter(counter + 1)
-    };
-
-    const handleMinus = () => {
-        if (counter - 1 >= 1) {
-            setCounter(counter - 1)
-        }
-    };
 
     const handleAddCart = () => {
         const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart'
@@ -30,7 +22,7 @@ const ProductInfo = ({ product }) => {
         axios.post(url, data, config)
             .then(res => {
                 dispatch(getCartThunk())
-                setCounter(1)
+                dispatch(setCounter(1))
             })
             .catch(err => console.log(err.response))
     };
@@ -44,19 +36,15 @@ const ProductInfo = ({ product }) => {
             <p className='productInfo__description'>{product?.description}</p>
             <footer className='productInfo__footer'>
                 <section className='productInfo__footer-price'>
-                    <h4>Price</h4>
-                    <span>{product?.price}</span>
+                    <h6 className='letter_Neon'>Price</h6>
+                    <span>$ {product?.price}</span>
                 </section>
                 <section className='productInfo__footer-quantity'>
-                    <h4>Quantity</h4>
-                    <div className='productInfo__footer-counter letter_Mynerve '>
-                        <div className='productInfo__footer-counter-minus' onClick={handleMinus}>-</div>
-                        <div className='productInfo__footer-counter-number'>{counter}</div>
-                        <div className='productInfo__footer-counter-plus' onClick={handleAdd}>+</div>
-                    </div>
+                    <h6 className='letter_Neon'>Quantity</h6>
+                    <Counter />
                 </section>
-                <button onClick={handleAddCart} className='productInfo__footer-btn' >Add to cart <i className='bx bx-cart'></i></button>
             </footer>
+            <button onClick={handleAddCart} className='productInfo__footer-btn' >Add to cart <i className='bx bx-cart'></i></button>
         </article>
     )
 }

@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import ProductInfo from '../components/ProductsPage/ProductInfo'
 import SimilarProducts from '../components/ProductsPage/SimilarProducts'
 import SliderImgs from '../components/ProductsPage/SliderImgs'
+import './styles/productPage.css'
 
 const ProductPage = () => {
 
@@ -19,14 +20,27 @@ const ProductPage = () => {
     }, [id])
 
     return (
-        <article>
-            <SliderImgs product={product} />
-            <ProductInfo product={product} />
-            <SimilarProducts
-                category={product?.category}
-                productId={product?.id}
-            />
-        </article>
+        <div className='productPage'>
+            <div className='productPage__header'>
+                <h6>Home</h6>
+                <div className='separator'></div>
+                <h6 className='productName'>{product?.title}</h6>
+            </div>
+            <article className='productPage__body'>
+                <div className='productPage__slider'>
+                    <SliderImgs product={product} />
+                </div>
+                <div className='productPage__product'>
+                    <ProductInfo product={product} />
+                </div>
+                <div className='productPage__similar'>
+                    <SimilarProducts
+                        category={product?.category}
+                        productId={product?.id}
+                    />
+                </div>
+            </article>
+        </div>
     )
 }
 

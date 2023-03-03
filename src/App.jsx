@@ -25,22 +25,28 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path='/product/:id' element={<ProductPage />}></Route>
-        <Route path='/user'>
-          <Route path='register' element={<RegisterPage />}></Route>
-          <Route path='login' element={<Login />}></Route>
-        </Route>
+      <div className='header'>
+        <Header />
+      </div>
+      <div className='body'>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+          <Route path='/product/:id' element={<ProductPage />}></Route>
+          <Route path='/user'>
+            <Route path='register' element={<RegisterPage />}></Route>
+            <Route path='login' element={<Login />}></Route>
+          </Route>
 
-        {/* Protected Routes*/}
-        <Route element={<ProtectedRoutes />}>
-          <Route path='/cart' element={<CartPage />}></Route>
-          <Route path='/purchase' element={<PurchasesPage />}></Route>
-        </Route>
-      </Routes>
-      <Footer />
+          {/* Protected Routes*/}
+          <Route element={<ProtectedRoutes />}>
+            <Route path='/cart' element={<CartPage />}></Route>
+            <Route path='/purchase' element={<PurchasesPage />}></Route>
+          </Route>
+        </Routes>
+      </div>
+      <div className='footer'>
+        <Footer />
+      </div>
     </div >
   )
 }
