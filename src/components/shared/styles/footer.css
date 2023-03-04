@@ -1,6 +1,4 @@
 .footer {
-    width: 100vw;
-    bottom: 0;
     background: linear-gradient(180deg, rgba(93,56,145,1) 56%, rgba(255,255,255,1) 100%);
 }
 .footer__info {
@@ -22,7 +20,7 @@ section > h3 {
     gap: 0.1em;
 }
 .info__gratitude  span{
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: whitesmoke;
 }
 
@@ -32,7 +30,7 @@ section > h3 {
 }
 .info__redes_social p a{
     color: whitesmoke;
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 .info__redes_social p a:hover{
     border-bottom: 1px solid #a8a8a8;
@@ -42,6 +40,7 @@ section > h3 {
 }
 .info__code a p {
     color:azure;
+    font-size: 0.8rem;
 }
 .info__code a p span {
     font-size: 1rem;
@@ -51,7 +50,7 @@ section > h3 {
 }
 
 .footer__bottom p {
-    padding: 1.2em;
+    padding: 1em;
     text-align: center;
     font-size: 0.7rem;
     font-weight: 600;
