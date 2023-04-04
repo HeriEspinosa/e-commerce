@@ -16,7 +16,7 @@ const PurchasesPage = () => {
     }, [])
 
     return (
-        <div className='purchasesPage'>
+        <div className='purchasesPage flex'>
             <div className='purchasesPage__item'>
                 {
                     purchases?.map(purchase => (
@@ -26,6 +26,9 @@ const PurchasesPage = () => {
                         />
                     ))
                 }
+            </div>
+            <div className="purchasesPage__slice flex">
+                <img src={'/public/thanksbuy.gif'} alt="" />
             </div>
         </div>
 

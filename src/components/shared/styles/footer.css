@@ -1,5 +1,6 @@
 .footer {
     background: linear-gradient(180deg, rgba(93,56,145,1) 56%, rgba(255,255,255,1) 100%);
+    
 }
 .footer__info {
     display: flex;

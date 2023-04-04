@@ -1,37 +1,79 @@
 .register {
     background-color: #5D3891;
-    height: 80vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 .register__container {
-    display: flex;
+    max-width: 400px;
+    box-shadow: 0px 1px 1px 1px black;
+    background-color: transparent;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     gap: 1em;
-    width: 50%;
-    height: 40%;
+    width: 60%;
+    height: 70%;
     margin: 0 auto;
     padding: 0.5em;
-    border: 2px solid #eee;
+    border: 2px solid #f3832cd4;
+    border-radius: 0.5em;
+}
+
+.register__welcome {
+    color: white;
+    margin: -10px 0 20px 0;
 }
 
 .register__info {
-    height: 30%;
-    background-color: #0a609a;
-    padding: 1em;
+    width: 80%;
+    background-color: #f3832cd4;
+    padding: 1.5em 4em;
+    border-radius: 0.5em;
+}
+.register__info h4{
+text-align: center;
 }
 
-.register__info h4 {
+.register__info span {
+    color: #4c2385;
+}
+
+.register__info h5 {
     display: inline-block;
     padding: 0.2em;
     color: #d7d6d6;
 }
 
 .register__form {
-    
     align-items: center;
+    padding-top: 1em;
+    color: white;
 }
+.register__form div {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 0.1em;
+}
+.register__form div input{
+    height: 2em;
+}
+
+.register__buttons {
+    margin: 1.5em 0.5em;
+}
+.register__buttons button {
+width: 50%;
+height: 2.5em;
+border-radius: 0.5em;
+font-weight: bold;
+color: white;
+box-shadow: 1px 1px 1px 1px black;
+background-color: transparent;
+cursor: pointer;
+}
+.register__buttons button:hover {
+    box-shadow: 0px 1px 1px 1px black;
+    background-color: #f3832cd4;
+    }

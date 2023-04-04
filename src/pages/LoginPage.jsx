@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import defaultValue from '../utils/defaultValues'
@@ -12,6 +12,11 @@ const Login = () => {
     const navigate = useNavigate()
 
     const { register, handleSubmit, reset } = useForm()
+
+    useEffect(() => {
+
+    }, [token])
+    
 
     const submit = data => {
         const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/users/login';
@@ -35,15 +40,20 @@ const Login = () => {
 
     const handleLogout = () => {
         localStorage.clear()
-        setToken()
+        setToken("")
     }
 
     if (localStorage.getItem('name')) {
         return (
-            <div>
-                <img src="" alt="" />
-                <h2>{localStorage.getItem('name')}</h2>
-                <button onClick={handleLogout}>Logout</button>
+            <div className='logged'>
+                <div className="logged_container">
+
+                </div>
+                <div className="logged__user flex">
+                    <img src="/user.png" alt="" />    
+                    <h2>{localStorage.getItem('name')}</h2>
+                    <button className='logged__btn' onClick={handleLogout}>Logout</button>
+                </div>
             </div>
         )
     }

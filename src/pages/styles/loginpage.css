@@ -85,6 +85,58 @@
     
 }
 
+.logged {
+    background-image: url(/logged.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+}
+.logged img {
+width: 100px;
+}
+
+.logged_container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.457);
+    filter: blur(1px);
+    opacity: 0.8;
+}
+
+.logged__user {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 50px;
+    flex-direction: column;
+    gap: 0.5em;
+}
+.logged__user h2 {
+    color: #5D3891;
+    text-shadow: 1px 1px 2px #f3832cd4;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-bottom: 1em;
+}
+.logged__btn {
+    background-color: #5D3891;
+    box-shadow: 0px 1px 2px 0px black;
+    width: 6em;
+    aspect-ratio: 2.2;
+    border-radius: 0.5em;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.logged__btn:hover {
+    background-color: #f3832cd4;
+    
+}
+
 @media (max-width: 700px) {
     .loginPages__welcome {
         margin-top: -100px;

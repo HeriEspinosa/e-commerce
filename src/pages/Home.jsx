@@ -24,6 +24,13 @@ const Home = () => {
         dispatch(getProductsByName(input))
     }
 
+    const handleChange = event => {
+        
+        if(event.target.value === "" ){
+            dispatch(getAllProductsThunk())
+        } 
+    }
+
     useEffect(() => {
         const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/categories'
         axios.get(url)
@@ -92,7 +99,7 @@ const Home = () => {
             </article>
 
             <div className='home__product'>
-                <form className='home__search flex' autoComplete="off" onSubmit={handleSubmit}>
+                <form className='home__search flex' autoComplete="off" onSubmit={handleSubmit} onChange={handleChange}>
                     <input className='letter_Neon' type="text" id='search' placeholder='What are you looking for?' />
                     <button><i className='bx bx-search-alt-2'></i></button>
                 </form>

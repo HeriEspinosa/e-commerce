@@ -1,16 +1,31 @@
 
 .purchase {
-    background-color: #eee;
+    max-width: 500px;
+    background-color: white;
+    padding: 1em;
+    flex-direction: column;
+    border-radius: 0.5em;
+    
 }
 
 .purchase__header {
-    width: 200px;
-    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1em;
     
 }
 
 .purchase__header img {
-    width: 100%;
+    width: 150px;
     height: 100%;
     object-fit: contain;
+}
+
+.purchase__info {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 2em;
 }

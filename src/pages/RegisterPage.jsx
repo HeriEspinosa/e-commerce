@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import defaultValue from '../utils/defaultValues';
 import config from '../utils/getConfig';
 import './styles/registerpage.css'
+import { useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
     const { register, handleSubmit, reset } = useForm()
@@ -15,12 +16,21 @@ const RegisterPage = () => {
         reset(defaultValue)
     }
 
+    const handleClick = () => {
+        navigate('/user/login')
+    }
+
+    const navigate = useNavigate();
+
     return (
         <div className='register'>
-            <div className="register__container">
+            <div className="register__container flex">
+            <h1 className='register__welcome letter_Mynerve'>Sign up</h1>
                 <div className='register__info'>
-                    <h4><span>Email: </span>espinosa@gmail.com</h4>
-                    <h4><span>Password: </span>230895</h4>
+                    <h4 className='letter_Mynerve'>default user</h4>
+                    <h5><span>Email: </span>espinosa@gmail.com</h5>
+                    <br />
+                    <h5><span>Password: </span>230895</h5>
                 </div>
                 <form className='register__form' action="" onSubmit={handleSubmit(submit)}>
                     <div>
@@ -43,8 +53,11 @@ const RegisterPage = () => {
                         <label htmlFor="phone">Phone: </label>
                         <input {...register('phone')} type="phone" id='phone' />
                     </div>
-                    <button>Register</button>
-                    <button>Login</button>
+                    <div className="register__buttons">
+                        <button>Register</button>
+                        <button onClick={handleClick}>Login</button>
+                    </div>
+                    
                 </form>
             </div>
 

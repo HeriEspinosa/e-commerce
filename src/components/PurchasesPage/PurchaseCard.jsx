@@ -4,13 +4,16 @@ import './styles/purchasecard.css'
 const PurchaseCard = ({ purchase }) => {
 
     return (
-        <article className='purchase'>
+        <article className='purchase flex'>
             <header className='purchase__header'>
-                <img src={purchase?.product.images[0].url} alt="product" />
+                <img src={purchase?.product.images[2].url} alt="product" />
+                <h4>{purchase.product.title}</h4>
             </header>
-            <h3>{purchase.product.title}</h3>
-            <div className='purchase__quantity'>{purchase?.quantity}</div>
+            <div className="purchase__info">
+                <div className='purchase__quantity'>quantity: {purchase?.quantity}</div>
             <div className='purchase__price'>{purchase?.product.price}/each</div>
+            </div>
+            
         </article>
     )
 }

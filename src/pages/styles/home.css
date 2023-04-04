@@ -2,6 +2,7 @@
     max-width: 1400px;
     display: grid;
     grid-template-columns: 0.3fr 1fr;
+    padding-bottom: 1em;
 }
 
 .home__filter {

@@ -1,1 +1,34 @@
 
+.purchasesPage {
+  background-color: #5D3891;
+  width: 100%;
+  height: 100vh;
+  padding: 0.5em;
+  overflow: hidden;
+}
+
+.purchasesPage__item {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5em;
+  height: 100%;
+  width: 40%;
+  padding: 1em;
+  overflow: scroll;
+
+}
+
+.purchasesPage__slice{
+  flex-direction: column;
+  gap: 16em;
+  width: 50%;
+  height: 100%;
+  padding: 1em;
+}
+.purchasesPage__slice img {
+  width: 100%;
+  align-self: center;
+  display:block;
+  margin:auto; 
+}
