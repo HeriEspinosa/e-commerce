@@ -40,7 +40,7 @@ padding: 0.5em;
 }
 
 .purchasesPage__right {
-  width: 70%;
+  width: 100%;
   height: 100%;
   flex-direction: column;
   gap: 1.5em;
@@ -59,6 +59,8 @@ padding: 0.5em;
   gap: 1em;
   height: 60px;
   border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
 }
 .purchasesPage__header-ul li {
   font-size: 1.2rem;
@@ -73,9 +75,11 @@ padding: 0.5em;
   gap: 0.5em;
 }
 
-.purchasesPage__item::before {
+.purchasesPage__header-ul::before {
+  content: '';
   position:absolute;
   border: 2px solid #f3832cd4;
   display:block;
-  top: 1px;
+  width: 100%;
+  top: 0;
 }

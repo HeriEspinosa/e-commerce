@@ -6,6 +6,16 @@
     flex-direction: column;
     border-radius: 0.5em;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.purchase::after {
+    content: '';
+    width: 100%;
+    background-color: #f3832cd4;
+    border: 2px solid transparent;
+    position: absolute;
+    bottom:0;
 }
 
 .purchase__header {
