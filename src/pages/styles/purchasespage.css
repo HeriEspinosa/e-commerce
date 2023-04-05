@@ -2,33 +2,80 @@
 .purchasesPage {
   background-color: #5D3891;
   width: 100%;
-  height: 100vh;
   padding: 0.5em;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+}
+
+.purchasesPage__left{
+  width: 35%;
+  height: 100%;
+  background-color: white;
+  padding: 1em;
+  flex-direction: column;
+  gap: 2em;
+  margin-top: 1em;
+  border-radius: 0.3em;
+}
+.purchasesPage__left h3 {
+  padding: 1em 0 0.5em 0;
+  color: black;
+  text-shadow: 0px 1px 1px #5D3891;
+}
+.purchasesPage__left-tienda {
+  box-shadow: 0px 1px 1px 1px #5D3891;
+  color: #f3832cd4;
+  text-shadow: -1px 1px 1px white;
+  letter-spacing: 0.1em;
+}
+.purchasesPage__left-tienda:hover{
+  cursor: pointer;
+  background-color: #5D3891;
+  color: white;
+  transform: scale(1.02);
+}
+.purchasesPage__left-tienda h5{
+padding: 0.5em;
+}
+
+.purchasesPage__right {
+  width: 70%;
+  height: 100%;
+  flex-direction: column;
+  gap: 1.5em;
+  padding: 1em;
+}
+
+.purchasesPage__searh {
+  width: 100%;
+  max-width: 500px;
+}
+.purchasesPage__header-ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  gap: 1em;
+  height: 60px;
+  border-radius: 0.3em;
+}
+.purchasesPage__header-ul li {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #5D3891;
+  cursor: pointer;
 }
 
 .purchasesPage__item {
-  display: flex;
-  justify-content: center;
+  position: relative;
   flex-direction: column;
   gap: 0.5em;
-  height: 100%;
-  width: 40%;
-  padding: 1em;
-  overflow: scroll;
-
 }
 
-.purchasesPage__slice{
-  flex-direction: column;
-  gap: 16em;
-  width: 50%;
-  height: 100%;
-  padding: 1em;
-}
-.purchasesPage__slice img {
-  width: 100%;
-  align-self: center;
+.purchasesPage__item::before {
+  position:absolute;
+  border: 2px solid #f3832cd4;
   display:block;
-  margin:auto; 
+  top: 1px;
 }

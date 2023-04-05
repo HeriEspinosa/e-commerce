@@ -2,10 +2,10 @@
 .purchase {
     max-width: 500px;
     background-color: white;
-    padding: 1em;
+    padding: 1em 1.5em;
     flex-direction: column;
     border-radius: 0.5em;
-    
+    width: 100%;
 }
 
 .purchase__header {
@@ -19,7 +19,6 @@
 
 .purchase__header img {
     width: 150px;
-    height: 100%;
     object-fit: contain;
 }
 
