@@ -28,17 +28,19 @@
 .register__info {
     width: 80%;
     background-color: #f3832cd4;
-    padding: 1.5em 4em;
+    padding: 1.5em 2.5em;
     border-radius: 0.5em;
+    text-align: center;
+}
+.register__default{
+    padding-bottom: 0.5em;
 }
 .register__info h4{
 text-align: center;
 }
-
 .register__info span {
     color: #4c2385;
 }
-
 .register__info h5 {
     display: inline-block;
     padding: 0.2em;

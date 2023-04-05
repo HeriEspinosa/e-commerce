@@ -27,7 +27,7 @@ const RegisterPage = () => {
             <div className="register__container flex">
             <h1 className='register__welcome letter_Mynerve'>Sign up</h1>
                 <div className='register__info'>
-                    <h4 className='letter_Mynerve'>default user</h4>
+                    <h4 className='register__default letter_Mynerve'>default user</h4>
                     <h5><span>Email: </span>espinosa@gmail.com</h5>
                     <br />
                     <h5><span>Password: </span>230895</h5>
